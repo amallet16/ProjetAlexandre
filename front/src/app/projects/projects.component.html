@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h4>Categories of projects</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Crazy categories on which you should contribute</th>
+            <th>You're close to do the right choice</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cat of categories">
+            <td>{{cat.name}}</td>
+            <td>
+              <button routerLink="/category/{{cat.id}}" 
+              class="btn btn-dark" >Come to explore me !</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4">
+      <h4>Fresh projects just released</h4>
+      <div>
+        <a routerLink="/project/{{projects.length}}"> Dernier projet</a><br/>
+        <a routerLink="/project/{{projects.length-1}}"> Avant dernier projet</a><br/>
+        <a routerLink="/project/{{projects.length-2}}"> Projet antepenultième</a><br/>
+        <a routerLink="/project/{{projects.length-3}}"> Quatrième projet en partant de la fin</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="img-responsive" style="">
+    <br/><br/><br/> 
+      <img style="width:1020px" src="https://blogs.economie.gouv.fr/les-cafes-economiques-de-bercy/wp-content/uploads/2017/02/Innovation.jpg"/>
+</div>

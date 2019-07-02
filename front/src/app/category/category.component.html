@@ -1,0 +1,55 @@
+<!--<div class="container" *ngIf="category">
+  <h4> You are on the category {{category.name}}</h4>
+  <div class="card" style="width: 90rem;" *ngFor="let pro of projects">
+    <img src="" class="card-img-top" alt="">
+    <div class="card-body">
+      <h5 class="card-title">{{pro.name}}</h5>
+      <p class="card-text ">{{pro.id}}</p>
+
+      <a href="" class="btn btn-primary">See my details</a>
+    </div>
+  </div>
+</div>-->
+
+<div class="row" *ngIf="category" >
+  <h4> You are on the category  </h4>
+    <h1> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<em><strong>{{category.name}}</strong></em></h1>
+    <div>&nbsp;</div>
+    <div class="col-md-5">
+      <div class="row space-16">&nbsp;</div>
+      <div class="row" >
+        <div class="col-sm-6">
+          
+          <div *ngFor="let pro of projects">
+              
+          <div class="thumbnail" >
+            <div class="caption text-center">
+              <div class="position-relative">
+                
+                <img src="https://az818438.vo.msecnd.net/icons/slack.png" style="width:84px;height:84px;"  />
+              </div>
+              <h4 id="thumbnail-label"><a routerLink="/project/{{pro.id}}">{{pro.name}}</a></h4>
+              <p><i class="glyphicon glyphicon-user light-red lighter bigger-120"></i>&nbsp;{{pro.pmName}}</p>
+              <div class="thumbnail-description smaller">{{pro.description}}</div>
+              <div class="thumbnail-description smaller">{{pro.beginDate | date : 'dd/MM/yyyy'}} to {{pro.endDate  | date : 'dd/MM/yyyy'}}</div>
+            </div>
+            <div class="caption card-footer text-center">
+              <ul class="list-inline">
+                <li><i class="people lighter"></i>&nbsp;{{pro.count}} € / {{pro.budget}}€</li>
+                <br/>
+                <li ><i class="glyphicon glyphicon-envelope lighter"></i><a class="tricheMail">&nbsp;<u>{{pro.pmMail}}</u></a></li>
+              </ul>
+            </div>
+          
+          </div>
+         </div>
+        </div>
+      
+      </div>
+      <div class="col-md-0">&nbsp;</div>
+    </div>
+    <div class="col-md-7">
+        <br/><br/><br/>
+          <img style="width:1020px" src="https://www.strategie.gouv.fr/sites/strategie.gouv.fr/files/thumbnails/image/166515792.jpg"/>
+    </div>
+  </div>

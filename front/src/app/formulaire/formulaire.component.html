@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngIf="currentUser">
+      <h4>Create your own project</h4>
+      <form [formGroup]="projectForm" (ngSubmit)="saveProject()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input formControlName="name" type="text" id="name" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input formControlName="description" type="text" id="description" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="beginDate">Start Date</label>
+            <input formControlName="beginDate" type="date" id="beginDate" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="endDate">End Date</label>
+            <input formControlName="endDate" type="date" id="endDate" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="budget">Budget</label>
+            <input formControlName="budget" type="nombre" id="budget" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="typeDon">Participation type</label>
+            <select formControlName="typeDon" id="typeDon" class="form-control">
+              <option *ngFor="let td of typesDon"[ngValue]="td">{{td.name}} </option>
+            </select>            
+          </div>
+          <div class="form-group" >
+            <label for="interet">Taux d'intérêts <em>(si la participation se fait sous forme de prêt)</em></label>
+            <input formControlName="interet" type="nombre" id="interet" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <label for="nameEnt">Company Name</label>
+            <input formControlName="nameEnt" type="text" id="nameEnt" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="pmName">Project Manager Name</label>
+            <input formControlName="pmName" type="text" id="pmName" class="form-control" placeholder="{{currentUser.name}}" />
+          </div>
+          <div class="form-group">
+            <label for="pmMail">Project Manager Email</label>
+            <input formControlName="pmMail" type="text" id="pmMail" class="form-control" placeholder="{{currentUser.email}}" />
+          </div>
+          
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select formControlName="category" id="category" class="form-control">
+              <option *ngFor="let cat of categories"[ngValue]="cat">{{cat.name}} </option>
+            </select>            
+          </div>        
+          <button class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+      <img class="img" src="https://hatchyouridea.com/wp-content/uploads/2017/05/logo-400-1.png"/>
+    </div>
+  </div>
+</div>

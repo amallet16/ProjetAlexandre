@@ -1,0 +1,72 @@
+
+<div class="container" *ngIf="project" >
+  <h4>Project : {{project.name}}</h4>
+  <div class="col-md-4" >
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="bold">Here you can see</th>
+          <th>all informations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="body1">Description :</th>
+          <th class="body2">{{project.description}}</th>
+        </tr>
+        <tr>
+          <th class="body1">Beginning :</th>
+          <th class="body2">{{project.beginDate  | date : 'dd/MM/yyyy'}}</th>
+        </tr>
+        <tr>
+          <th class="body1">End :</th>
+          <th class="body2">{{project.endDate | date : 'dd/MM/yyyy' }}</th>
+        </tr>
+        <tr>
+          <th class="body1">Description :</th>
+          <th class="body2">{{project.description}}</th>
+        </tr>
+        <tr>
+          <th class="body1">Budget :</th>
+          <th class="body2">{{project.budget}}</th>
+        </tr>
+        <tr>
+          <th class="body1">Participation's type :</th>
+          <th class="body2">{{project.typeDon.name}}</th>
+        </tr>
+        <tr>
+          <th class="body1">Company Name :</th>
+          <th class="body2">{{project.nameEnt}}</th>
+        </tr>
+        <tr>
+          <th class="body1">Project Manager Name :</th>
+          <th class="body2">{{project.pmName}}</th>
+        </tr>
+        <tr>
+          <th class="body1">Project Manager Mail :</th>
+          <th class="body2">{{project.pmMail}}</th>
+        </tr>
+        <tr>
+          <th class="body1">Category :</th>
+          <th class="body2">{{project.category.name}}</th>
+        </tr>
+      </tbody>
+      
+    </table>
+  </div>
+  <div class="col-md-3"></div>
+    <div class="col-md-4">
+    <form [formGroup]="projectEditForm"  class="form" (ngSubmit)="contribution()">
+        <h4>It's time to contribuuuuuuuuute !</h4>
+      <div class="form-group">        
+        <label for="name">Name</label><br/><br/>
+        <label>{{project.name}}</label>
+      </div>
+      <div class="form-group">
+        <label for="count">Contribution</label><br/>
+        <input formControlName="count" type="number" id="count" clqss="form-control" />        
+      </div>
+      <button class="btn btn-primary">Contribute</button>
+    </form>
+    </div>  
+</div>
